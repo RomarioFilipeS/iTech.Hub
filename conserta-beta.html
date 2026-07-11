@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Encontre assistências técnicas próximas para seu aparelho.">
+  <title>iTech Hub | Assistências técnicas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="#inicio" aria-label="Página inicial iTech Hub">
+      <img src="img/itechhub-logo-navbar.jpg" alt="iTech Hub">
+    </a>
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#assistencias">Assistências</a>
+      <button class="button button--outline" type="button" data-scroll-to="busca">Encontrar loja</button>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="hero__content">
+        <p class="eyebrow"><span></span> Atendimento em Brasília e região</p>
+        <h1>Seu aparelho parou?<br><strong>A gente encontra a solução.</strong></h1>
+        <p class="hero__text">Compare assistências próximas para celular, notebook, tablet ou TV e peça seu orçamento em poucos minutos.</p>
+
+        <form class="search-card" id="busca">
+          <label class="sr-only" for="searchInput">Busque por bairro ou serviço</label>
+          <span class="search-card__icon" aria-hidden="true">⌕</span>
+          <input id="searchInput" type="search" placeholder="Ex.: troca de tela, Asa Norte" autocomplete="off">
+          <button class="button button--primary" type="submit">Buscar</button>
+        </form>
+        <p class="search-feedback" id="searchFeedback" aria-live="polite">Escolha um aparelho para começar.</p>
+
+        <div class="device-selector" aria-label="Tipo de aparelho">
+          <button class="device-selector__button is-active" type="button" data-device="Celular">📱 Celular</button>
+          <button class="device-selector__button" type="button" data-device="Notebook">💻 Notebook</button>
+          <button class="device-selector__button" type="button" data-device="Tablet">⌨️ Tablet</button>
+          <button class="device-selector__button" type="button" data-device="TV">📺 TV</button>
+        </div>
+        <div class="service-chips" id="serviceChips" aria-label="Serviços mais procurados"></div>
+      </div>
+      <div class="hero__image">
+        <img src="img/itechhub-icon.jpg" alt="iTech Hub, a loja certa perto de você">
+      </div>
+    </section>
+
+    <section class="steps" id="como-funciona" aria-labelledby="stepsTitle">
+      <div>
+        <p class="section-label">Simples e rápido</p>
+        <h2 id="stepsTitle">Resolva seu reparo em três passos</h2>
+      </div>
+      <ol class="steps__list">
+        <li><span>1</span><div><b>Descreva o problema</b><small>Escolha o aparelho e o tipo de reparo.</small></div></li>
+        <li><span>2</span><div><b>Compare as opções</b><small>Veja avaliações, preço inicial e prazo.</small></div></li>
+        <li><span>3</span><div><b>Peça seu orçamento</b><small>A loja entra em contato pelo WhatsApp.</small></div></li>
+      </ol>
+    </section>
+
+    <section class="stores" id="assistencias" aria-labelledby="storesTitle">
+      <div class="section-heading">
+        <div>
+          <p class="section-label">Assistências verificadas</p>
+          <h2 id="storesTitle">Lojas perto de você</h2>
+        </div>
+        <span class="result-count" id="resultCount"></span>
+      </div>
+      <div class="store-grid" id="storeGrid"></div>
+      <p class="empty-state" id="emptyState" hidden>Nenhuma loja encontrada. Tente buscar por outro serviço ou bairro.</p>
+    </section>
+  </main>
+
+  <dialog class="quote-dialog" id="quoteDialog" aria-labelledby="dialogTitle">
+    <form class="quote-dialog__content" id="quoteForm" method="dialog">
+      <button class="dialog-close" type="button" id="closeDialog" aria-label="Fechar">×</button>
+      <p class="section-label">Pedir orçamento</p>
+      <h2 id="dialogTitle">Fale com a assistência</h2>
+      <p class="dialog-store" id="dialogStore"></p>
+      <label>Seu nome<input id="nameInput" required placeholder="Como podemos te chamar?"></label>
+      <label>WhatsApp<input id="phoneInput" required inputmode="tel" placeholder="(61) 99999-0000"></label>
+      <label>Detalhes do reparo<textarea id="detailInput" required placeholder="Conte brevemente o que aconteceu"></textarea></label>
+      <button class="button button--primary button--full" type="submit">Enviar solicitação</button>
+      <p class="form-message" id="formMessage" aria-live="polite"></p>
+    </form>
+  </dialog>
+
+  <footer class="footer">
+    <img src="img/itechhub-logo-light-bg.jpg" alt="iTech Hub">
+    <p>iTech Hub · A loja certa, perto de você.</p>
+  <p>© 202 iTech Hub. Todos os direitos reservados. Elisson, Romario e Thiago ds</p>
+  </footer>
+</body>
+</html>
